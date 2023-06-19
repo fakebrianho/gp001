@@ -42,8 +42,6 @@ export const addShader = () => {
 			},
 			displacementStrength: { type: 'f', value: 0.5 },
 		},
-		// wireframe: true,
-		// transparent: true,
 		vertexShader: vertexShader,
 		fragmentShader: fragmentShader,
 	})

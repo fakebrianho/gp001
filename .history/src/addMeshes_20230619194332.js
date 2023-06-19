@@ -8,6 +8,7 @@ import {
 	DoubleSide,
 	TorusGeometry,
 	MeshBasicMaterial,
+	Points,
 } from 'three'
 import vertexShader from '/@/shaders/vertex.glsl'
 import fragmentShader from '/@/shaders/fragment.glsl'
@@ -22,6 +23,7 @@ export const testPoints = () => {
 	const geometry = new TorusGeometry(10, 5, 16, 100)
 	const material = new MeshBasicMaterial({ color: 'white' })
 	const mesh = new Points(geometry, material)
+	mesh.position.set(-2, 0, 0)
 	return mesh
 }
 
@@ -40,8 +42,6 @@ export const addShader = () => {
 			},
 			displacementStrength: { type: 'f', value: 0.5 },
 		},
-		// wireframe: true,
-		// transparent: true,
 		vertexShader: vertexShader,
 		fragmentShader: fragmentShader,
 	})
